@@ -1,0 +1,22 @@
+{
+  "name": "xiaoyang",
+  "homepage": "https://github.com/qinxiaozhe/test",
+  "authors": [
+    "qinxiaozhe <903216731@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.6.2",
+    "bootstrap": "^3.3.7",
+    "bower": "*"
+  }
+}

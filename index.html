@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <style>
+        html,body{
+            font-family:"Microsoft YaHei","Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing:antialiased;
+            height: 100%;
+            width: 100%;
+        }
+        .dh{
+            position: fixed;
+            top:0;
+            height: 66px;
+            width: 84.5%;
+            line-height: 50px;
+            background: rgba(255,255,255,.9);
+            border-bottom: 2px solid #ececec;
+            font-size: 16px;
+            z-index: 10000000000;
+        }
+        .dh a{
+            color: #9ecd51;
+            height: 62px;
+            line-height: 62px;
+        }
+        a,a:hover,a:active{
+            color:#999999;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="dh">
+                    <div class="navbar">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <img src="images/logo.png" alt="" />
+                            </div>
+                            <ul class="navbar-nav nav pull-right">
+                                <li><a class="on" href="#!/">首页</a></li>
+                                <li><a href="#!/product">产品中心</a></li>
+                                <li><a href="#!/case">典型案例</a></li>
+                                <li><a href="#!/service">服务支持</a></li>
+                                <li><a href="#!/about">关于晓羊</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div ng-view></div>
+                </div>
+                <div class="panel-footer" style="font-size:12px;color:lightslategray">
+                    <div class="col-md-6">
+                        <table class="tab-content table">
+                            <caption style="color: #eea14b;font-size: 14px">友情链接</caption>
+                        <tr class="text-left">
+                            <td><a href="">教育部</a></td>
+                            <td><a href="">中央电化教育馆</a></td>
+                            <td><a href="">中国教育学会</a></td>
+                        </tr>
+                        <tr class="text-left">
+                            <td><a href="">中国高等教育协会</a></td>
+                            <td><a href="">中国教育科学研究院</a></td>
+                            <td><a href="">中国教育交流协会</a></td>
+                            <td><a href="">中国教育新闻网</a></td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="tab-content table">
+                            <caption style="color: #eea14b;font-size: 14px">网站地图</caption>
+                            <tr class="text-left">
+                                <td><a href="#!/service">产品服务</a></td>
+                                <td><a href="">合作代理</a></td>
+                                <td><a href="#!/case">客户案例</a></td>
+                            </tr>
+                            <tr class="text-left">
+                                <td><a href="#!/about">关于我们</a></td>
+                                <td><a href="">新闻资讯</a></td>
+                                <td><a href="">申请加入</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="text-center" style="margin:0 160px">版权所有 2003-2016 北京晓羊教育科技有限公司.保留一切权利.京ICP备09064986号
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script>
+    var app=angular.module('appModule',['ngRoute']);
+    app.config(function($routeProvider){
+        $routeProvider.when('/',{
+            templateUrl:'tmpl/home.html'
+        }).when('/case',{
+            templateUrl:'tmpl/case.html'
+        }).when('/product',{
+            templateUrl:'tmpl/product.html'
+        }).when('/service',{
+            templateUrl:'tmpl/service.html'
+        }).when('/about',{
+            templateUrl:'tmpl/about.html'
+        }).otherwise('/');
+    })
+</script>
+</body>
+</html>
